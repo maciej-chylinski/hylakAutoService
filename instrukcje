@@ -71,3 +71,52 @@ hylak**
 maciej.chyloinski@gmail.com
 path = '/home/<your-username>/my-first-blog'
 /home/mchylinx/hylakAutoService
+
+
+
+
+// Tworzenie obiektu
+W taki sposób tworzymy nowy obiekt Post w bazie danych:
+>>> Post.objects.create(author=me, title='Przykładowy tytuł', text='Test')
+
+Ale brakuje nam jednego składnika: me. Musimy przekazać instancję modelu User jako autora.
+Najpierw zaimportujmy model User:
+>>> from django.contrib.auth.models import User
+Jakich użytkowników mamy w bazie danych?:
+>>> User.objects.all()
+<QuerySet [<User: mchylinx>]>
+To konto administratora, które stworzyłyśmy wcześniej! Teraz uzyskajmy dostęp do naszej instancji użytkownika:
+me = User.objects.get(username='ola')
+
+Jak widzisz, za pomocą polecenia get pobrałyśmy z bazy obiekt użytkownika (User) z właściwością username o wartości 'mchylinx'.
+Teraz możemy wreszcie stworzyć post:
+>>> Post.objects.create(author=me, title='Przykładowy tytuł', text='Test')
+>>> Post.objects.all()
+<QuerySet [<Post: Mój pierwszy wpis>, <Post: Kolejny tytuł wpisu>, <Post: Przykładowy tytuł>]>
+
+Filtrowanie:
+Post.objects.filter(author=me)
+Post.objects.filter(title__contains = 'jakiś_fragment_tytułu')
+
+from django.utils import timezone
+>>> Post.objects.filter(published_date__lte=timezone.now())
+
+QuerySetów w Django: https://docs.djangoproject.com/en/1.8/ref/models/querysets/
+
+
+Dobrze byłoby sprawdzić, czy Twoja strona dalej działa w Internecie, prawda? Ponownie wyślijmy kod na PythonAnywhere. Oto małe przypomnienie jak to zrobić...
+
+Najpierw zapisz swój kod na Githubie
+$ git status
+[...]
+$ git add --all .
+$ git status
+[...]
+$ git commit -m "Modyfikacja szablonu, by pokazywal posty z bazy danych"
+[...]
+$ git push
+Teraz zaloguj się ponownie na PythonAnywhere i przejdź do konsoli Bash (albo uruchom nową) i wpisz:
+$ cd my-first-blog
+$ git pull
+[...]
+Na koniec przejdź do podstrony Web tab i naciśnij Reload. Twoja aktualizacja powinna być widoczna!
