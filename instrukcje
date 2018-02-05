@@ -1,0 +1,58 @@
+[0]
+utworzenie środowiska wirtualnego: python -m venv hylakenv
+aktywacja: hylakenv\Scripts\activate
+tworzenie projektu: django-admin startproject hylakAutoSerwis .
+ustaw source-root katalog z virtual envem (twoje wirtualne środowisko virtualenv - tutaj hylakenv)
+
+[1]
+tworzenie aplikacji 'blog':
+python manage.py startapp blog
+
+Po stworzeniu aplikacji musimy dać znać Django, że powinien jej używać. Posługujemy się w tym celu plikiem mysite/settings.py. Musimy odnaleźć nagłówek INSTALLED_APPS i dodać wiersz o treści 'blog', tuż przed nawiasem zamykającym ). Czyli efekt końcowy powinien wyglądać tak:
+INSTALLED_APPS = (
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'blog',
+)
+
+Potem tworzenie modelu w pliku blog/models.py
+Potem migracje: python manage.py makemigrations blog /albo python manage.py makemigrations + python manage.py showmigrations - pokaże migracje
+
+python manage.py makemigrations blog
+python manage.py migrate blog
+
+[2] tworzymy konto admin
+blog/admin.py:
+from django.contrib import admin
+from .models import Post
+admin.site.register(Post)
+
+python manage.py runserver
+http://127.0.0.1:8000/admin/
+
+oraz w konsoli superuser: python manage.py createsuperuser
+
+panel admina django: https://docs.djangoproject.com/en/1.8/ref/contrib/admin/
+
+[3]
+publikowanie: https://tutorial.djangogirls.org/pl/deploy/
+
+git init -> w katalogu głównym prjektu:  C:\Users\mchylinx\PycharmProjects\hylak_serwis>
+
+stwórz plik: touch .gitignore
+treść:
+*.pyc
+__pycache__
+myvenv
+db.sqlite3
+.DS_Store
+
+git add --all
+
+creating a repo on github:
+create a repo on github
+git remote add origin https://github.com/maciej-chylinski/hylakAutoService.git
