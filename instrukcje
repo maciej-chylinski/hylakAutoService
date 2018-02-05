@@ -62,8 +62,12 @@ git add --all
 creating a repo on github:
 create a repo on github
 git remote add origin https://github.com/maciej-chylinski/hylakAutoService.git
->>>>>>> views_customization
 
+
+
+
+
+O selektorach CSS możesz przeczytać więcej tutaj: CSS Selectors in w3schools.
 
 pythona-anywhere.com
 machylinx
@@ -118,5 +122,5 @@ $ git push
 Teraz zaloguj się ponownie na PythonAnywhere i przejdź do konsoli Bash (albo uruchom nową) i wpisz:
 $ cd my-first-blog
 $ git pull
-[...]
+source myvenv/bin/activate
 Na koniec przejdź do podstrony Web tab i naciśnij Reload. Twoja aktualizacja powinna być widoczna!
