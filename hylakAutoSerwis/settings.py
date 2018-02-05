@@ -25,7 +25,7 @@ SECRET_KEY = '8@(a#07jov_g5)mfx(x*f@fq2pw5#bu9p8xuc=z$9v4_eo++rq'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mchylinx.pythonanywhere.com']
 
 
 # Application definition
