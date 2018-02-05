@@ -39,7 +39,11 @@ oraz w konsoli superuser: python manage.py createsuperuser
 panel admina django: https://docs.djangoproject.com/en/1.8/ref/contrib/admin/
 
 [3]
+<<<<<<< HEAD
 publikowanie
+=======
+publikowanie: https://tutorial.djangogirls.org/pl/deploy/
+>>>>>>> views_customization
 
 git init -> w katalogu głównym prjektu:  C:\Users\mchylinx\PycharmProjects\hylak_serwis>
 
@@ -50,3 +54,12 @@ __pycache__
 myvenv
 db.sqlite3
 .DS_Store
+<<<<<<< HEAD
+=======
+
+git add --all
+
+creating a repo on github:
+create a repo on github
+git remote add origin https://github.com/maciej-chylinski/hylakAutoService.git
+>>>>>>> views_customization
