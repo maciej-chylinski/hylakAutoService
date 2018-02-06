@@ -1,0 +1,10 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    {% for offerItem in offerItems %}
+        <div class="col-md-8 col-md-offset-2 col-sm-12 ">
+             <img src="{{ MEDIA_URL }}{{ offerItem.offer_item_image }}" />
+            {{ offerItem.title }} {{ offerItem.text }}
+        </div>
+    {% endfor %}
+{% endblock %}
