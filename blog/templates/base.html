@@ -7,21 +7,20 @@
 {% load bootstrap_themes %}
 
 <!-- loading compression module -->
-<!--  load compress -->
+{% load compress %}
 
 {% bootstrap_styles theme='simplex' type='min.css' %}
 
 {% block bootstrap3_extra_head %}
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,700" rel="stylesheet" type="text/css">
 
-    <!-- compress css -->
+    {% compress css %}
     <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
+    {% endcompress %}
 
-    <!--  endcompress -->
-
-    <!--  compress js -->
+    {% compress js %}
     <script src="{% static 'js/jquery.cookie.js' %}"></script>
-    <!--  endcompress -->
+    {%endcompress %}
 {% endblock %}
 
 {% block bootstrap3_title %}

@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'blog',
     'bootstrap3',
     'bootstrap_themes',
+    'compressor',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -110,6 +111,14 @@ COMPRESS_ENABLED = True
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
+
+# directories where django compressor will look for static files
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'compressor.finders.CompressorFinder',
+)
+
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 MEDIA_URL = "/media/"
