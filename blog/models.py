@@ -29,8 +29,10 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
+
 def offer_item_upload_path(instance, filename):
     return '/'.join(['offer', str(instance.id), filename])
+
 
 class Offer(models.Model):
     title = models.CharField(max_length=200)

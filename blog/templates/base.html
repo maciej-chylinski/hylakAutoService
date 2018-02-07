@@ -1,0 +1,87 @@
+{% extends 'bootstrap3/bootstrap3.html' %}
+
+{% load staticfiles %}
+
+{% load bootstrap3 %}
+
+{% load bootstrap_themes %}
+
+<!-- loading compression module -->
+<!--  load compress -->
+
+{% bootstrap_styles theme='simplex' type='min.css' %}
+
+{% block bootstrap3_extra_head %}
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,700" rel="stylesheet" type="text/css">
+
+    <!-- compress css -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
+    <!--  endcompress -->
+
+    <!--  compress js -->
+    <script src="{% static 'js/jquery.cookie.js' %}"></script>
+    <!--  endcompress -->
+{% endblock %}
+
+{% block bootstrap3_title %}
+    {% block title %}
+        Hylak - auto serwis
+    {% endblock %}
+{% endblock %}
+
+    <!--<body>-->
+
+{% block bootstrap3_content %}
+
+     <nav class="navbar navbar-inverse navbar-fixed-top">
+         <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="{% url 'post_list' %}" class="navbar-brand">Hylak - auto serwis</a>
+                </div>
+                <div id="navbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+
+                        <li class="hvr-curl-top-right"><a href="{% url 'offer' %}">O nas</a></li>
+                        <li class="hvr-curl-top-right"><a href="{% url 'post_list' %}">Kontakt</a></li>
+                        {% if request.user.is_authenticated %}<li class="hvr-curl-top-right"><a href="{% url 'post_new' %}">Rezerwacja</a></li>{% endif %}
+                    </ul>
+                    <div class="nabar-form pullright">
+                        {% if request.user.is_authenticated %} <!-- template tag -->
+                            <!-- <a href="{# % url 'post_new' % #}"><span class="glyphicon glyphicon-plus"></span>Dodaj komentarz</a> -->
+                            Witaj, {% if request.user.first_name %}
+                                {{ request.user.first_name }}
+                                {% else %}
+                                {{ request.user.username }}
+                                {% endif %}!
+                                    <a href="{% url 'post_new' %}"><span class="glyphicon glyphicon-plus"></span>Dodaj komentarz</a>
+                                    <a href="{% url 'auth_logout' %}">Wyloguj</a>
+                        {% else %}
+                            Witaj, jesteś niezalogwany! <a href="{% url 'auth_login' %}">Zaloguj</a> or <a href="{% url 'registration_register' %}">Zarejestruj</a>
+                        {% endif %}
+                    </div>
+                </div>
+         </div>
+     </nav>
+
+
+    {% block body %}
+        {% block content %}
+        {% endblock %}
+    {% endblock %}
+
+
+     <div class="content container">
+        <div class="row">
+            <div class="col-md-8">
+
+            </div>
+        </div>
+     </div>
+{% endblock %}
+
+

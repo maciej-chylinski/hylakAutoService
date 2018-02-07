@@ -173,3 +173,9 @@ hylakenv/
 db.sqlite3
 .DS_Store
 .idea/
+
+
+.media/
+/media/
+/media/offer/
+/media/offer/

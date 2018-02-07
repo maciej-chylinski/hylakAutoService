@@ -1,0 +1,9 @@
+Witamy,
+
+Włąśnie zarejestrowałeś konto w serwisie {{ site.name }}. Kliknij poniższy link aby aktywować konto:
+
+http://{{ site.domain }}{% url 'registration_activate' activation_key %}
+
+Link aktywacyjny jest ważny przez{{ expiration_days }} dni. Jeśli to nie Ty aktywowałeś konto, zignoruj tego maila
+
+-Zespół "Hylak - auto serwis"
