@@ -16,6 +16,7 @@
 
     <!-- compress css -->
     <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
+
     <!--  endcompress -->
 
     <!--  compress js -->
@@ -45,9 +46,9 @@
                 </div>
                 <div id="navbar" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
-
-                        <li class="hvr-curl-top-right"><a href="{% url 'offer' %}">O nas</a></li>
-                        <li class="hvr-curl-top-right"><a href="{% url 'post_list' %}">Kontakt</a></li>
+                        <li class="hvr-curl-top-right"><a href="{% url 'offer' %}">Oferta</a></li>
+                        <li class="hvr-curl-top-right"><a href="#">O nas</a></li>
+                        <li class="hvr-curl-top-right"><a href="{% url 'contact' %}">Kontakt</a></li>
                         {% if request.user.is_authenticated %}<li class="hvr-curl-top-right"><a href="{% url 'post_new' %}">Rezerwacja</a></li>{% endif %}
                     </ul>
                     <div class="nabar-form pullright">
@@ -61,18 +62,24 @@
                                     <a href="{% url 'post_new' %}"><span class="glyphicon glyphicon-plus"></span>Dodaj komentarz</a>
                                     <a href="{% url 'auth_logout' %}">Wyloguj</a>
                         {% else %}
-                            Witaj, jesteś niezalogwany! <a href="{% url 'auth_login' %}">Zaloguj</a> or <a href="{% url 'registration_register' %}">Zarejestruj</a>
+                            Witaj, jesteś niezalogwany! <a href="{% url 'auth_login' %}">Zaloguj</a> lub <a href="{% url 'registration_register' %}">Zarejestruj</a>
                         {% endif %}
                     </div>
                 </div>
          </div>
      </nav>
 
-
-    {% block body %}
-        {% block content %}
-        {% endblock %}
-    {% endblock %}
+    <div class="container-fluid">
+        <img src="{% static 'img/header_full.jpg' %}" class="bg" />
+        <div class="parallax">
+            <div class="row"> <!-- column class should be wrapped by row class -->
+                {% block body %}
+                    {% block content %}
+                    {% endblock %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
 
 
      <div class="content container">
@@ -82,6 +89,14 @@
             </div>
         </div>
      </div>
+
+
+    <!-- footer -->
+    <div class="row text-center navbar footer">
+        <div class="col-md-12">
+            <p>2018 Hylak - auto serwis </p>
+        </div>
+   </div>
 {% endblock %}
 
 

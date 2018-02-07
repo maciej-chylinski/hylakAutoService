@@ -1,10 +1,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    {% for offerItem in offerItems %}
-        <div class="col-md-8 col-md-offset-2 col-sm-12 ">
-             <img src="{{ MEDIA_URL }}{{ offerItem.offer_item_image }}" />
-            {{ offerItem.title }} {{ offerItem.text }}
-        </div>
-    {% endfor %}
+    <div class="col-md-8 col-md-offset-2 col-sm-12 maincontent">
+        <!-- <div style="text-align:center"><h3>Oferta</h3></div> -->
+            {% for offerItem in offerItems %}
+            <div class="storefront_book_display">
+            <!--<a href="{# % url 'book_details' book.id % #}"> -->
+                <img src="{{ MEDIA_URL }}{{ offerItem.offer_item_image }}" />
+                <span class="storefront_book_title">{{ offerItem.title }}</span>
+                <span class="storefront_book_author">{{ offerItem.text }}</span>
+            <!-- </a> -->
+            </div>
+            {% endfor %}
+    </div>
 {% endblock %}

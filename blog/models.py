@@ -40,3 +40,11 @@ class Offer(models.Model):
     created_date = models.DateTimeField(
         default=timezone.now)
     offer_item_image = models.ImageField(upload_to=offer_item_upload_path, default='/offer/empty_offer_item.jpg')
+
+
+class Contact(models.Model):
+    contact_title = models.CharField(max_length=100, null=True)
+    contact_name = models.CharField(max_length=100)
+    phone =  models.CharField(max_length=20)
+    address = models.TextField()
+    email = models.CharField(max_length=100)

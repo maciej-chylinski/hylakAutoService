@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 
-from .models import Post, Offer
+from .models import Post, Offer, Contact
 from .forms import PostForm
 
 
@@ -48,3 +48,9 @@ def offer_items(request):
     #offerItems = Offer.objects.all()
     offerItems = Offer.objects.filter(created_date__lte = timezone.now())
     return render(request, 'blog/offer.html', {'offerItems': offerItems})
+
+
+def contact(request):
+    contacts = Contact.objects.all()
+    return render(request, 'blog/contact.html', {'contacts': contacts})
+

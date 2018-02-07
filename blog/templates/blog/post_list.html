@@ -1,13 +1,23 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    {% for post in posts %}
-        <div class="post">
-            <div class="date">
-                {{ post.published_date }}
+    <div class="col-md-8 col-md-offset-2 col-sm-12 maincontent">
+        {% for post in posts %}
+            <div class="post">
+                <div class="date">
+                    {{ post.published_date }}
+                </div>
+                <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+                <span class="storefront_book_title">{{ post.text|linebreaksbr }}</span>
+
+                <!--
+                <div class="storefront_book_display">
+                    <span class="storefront_book_author">{# { post.text|linebreaksbr } #}</span>
+                </div>
+                <p>{# { post.text|linebreaksbr } #}</p>
+                -->
             </div>
-            <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
-            <p>{{ post.text|linebreaksbr }}</p>
-        </div>
-    {% endfor %}
+        {% endfor %}
+    </div>
 {% endblock %}
+
