@@ -6,4 +6,4 @@ http://{{ site.domain }}{% url 'registration_activate' activation_key %}
 
 Link aktywacyjny jest ważny przez{{ expiration_days }} dni. Jeśli to nie Ty aktywowałeś konto, zignoruj tego maila
 
--Zespół "Hylak - auto serwis"
+-Zespół "HYLAK auto serwis"

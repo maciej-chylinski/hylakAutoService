@@ -122,7 +122,7 @@ $ git push
 Teraz zaloguj się ponownie na PythonAnywhere i przejdź do konsoli Bash (albo uruchom nową) i wpisz:
 $ cd my-first-blog
 $ git pull
-source myvenv/bin/activate
+source myvenv/bin/activate !!!
 Na koniec przejdź do podstrony Web tab i naciśnij Reload. Twoja aktualizacja powinna być widoczna!
 
 
@@ -208,3 +208,9 @@ body {
 	padding: 0px;
 	font-color: #fff;
 }
+
+
+
+
+TREŚCI
+http://www.wyrwaszczecin.pl/serwis-opon.html
