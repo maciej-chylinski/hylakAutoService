@@ -49,6 +49,13 @@ def offer_items(request):
     offerItems = Offer.objects.filter(created_date__lte = timezone.now())
     return render(request, 'blog/offer.html', {'offerItems': offerItems})
 
+def offer_detail(request, offer_id):
+    offer_detail = get_object_or_404(Offer, id=offer_id)
+    context = {
+        'offer_detail': offer_detail,
+    }
+    return render(request, 'blog/offer_detail.html', context)
+
 
 def contact(request):
     contacts = Contact.objects.all()

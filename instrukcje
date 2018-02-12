@@ -123,6 +123,7 @@ Teraz zaloguj się ponownie na PythonAnywhere i przejdź do konsoli Bash (albo u
 $ cd my-first-blog
 $ git pull
 source myvenv/bin/activate !!!
+source hylakenv/bin/activate !!!
 Na koniec przejdź do podstrony Web tab i naciśnij Reload. Twoja aktualizacja powinna być widoczna!
 
 

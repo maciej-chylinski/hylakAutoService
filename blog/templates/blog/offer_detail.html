@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block content %}
+    <div class="col-md-8 col-md-offset-2 col-sm-12 maincontent">
+            <div class="detail_book_display">
+            <!--<div class="storefront_book_display"> -->
+                <img src="{{ MEDIA_URL }}{{ offer_detail.offer_item_image }}" />
+                <span class="detail_book_title">{{offer_detail.title}}</span>
+            </div>
+
+            <div class="detail_book_reviews_text">
+                <div class="col-md-6 col-md-offset-3">
+                    {{ offer_detail.text }}
+                </div>
+            </div>
+    </div>
+{% endblock %}
+

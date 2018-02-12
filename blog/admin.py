@@ -3,7 +3,7 @@ from .models import Post, Offer, Contact
 
 
 class OfferAdmin(admin.ModelAdmin):
-    list_display = ('title', 'text', 'created_date')
+    list_display = ('id', 'title', 'text', 'created_date')
 
 
 class ContactAdmin(admin.ModelAdmin):

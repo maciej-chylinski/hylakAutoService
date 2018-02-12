@@ -145,9 +145,14 @@ img.bg {
 }
 
 /* Storefront styles */
-
 .storefront_book_display {
     width: 200px;
+    display: inline-block;
+    text-align: center;
+}
+
+.storefront_book_display_wide {
+    width: 300px;
     display: inline-block;
     text-align: center;
 }
@@ -198,6 +203,15 @@ img.bg {
     display:block;
     font-weight: bold;
 }
+
+.detail_book_reviews_text {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 15px;
+    display:block;
+    text-align: justify;
+}
+
 .detail_book_reviews_map {
     width: 500px;
     height: 300px;

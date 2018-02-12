@@ -4,15 +4,15 @@
     <div class="col-md-8 col-md-offset-2 col-sm-12 maincontent">
         <div style="text-align:center"><h3>Dane kontaktowe</h3></div>
         {% for contact in contacts %}
-        <div class="storefront_book_display">
+        <div class="detail_book_display">
             <!-- <a href="{# % url 'contact'% #}"></a> -->
-                <p><span class="storefront_book_title">
-                    {{ contact.contact_title }} {{ contact.contact_name  }}
-                </span></p>
+            <p><span class="storefront_book_title">
+                {{ contact.contact_title }} {{ contact.contact_name  }}
+            </span></p>
             <p><span class="glyphicon glyphicon-map-marker"></span> {{ contact.address }}</p>
             <p><span class="glyphicon glyphicon-envelope"></span> <a href="mailto:{{ contact.email }}">{{ contact.email }}</a></p>
             <p><span class="glyphicon glyphicon-phone-alt"></span> {{ contact.phone }}</p>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2320.3883249805813!2d18.456232951795272!3d54.43843198012532!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46fda1d204f92413%3A0xdbe504b3748841f5!2zScWCYXdza2EgMUEsIEdkYcWEc2s!5e0!3m2!1spl!2spl!4v1518015507287" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2320.3883249805813!2d18.456232951795272!3d54.43843198012532!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46fda1d204f92413%3A0xdbe504b3748841f5!2zScWCYXdza2EgMUEsIEdkYcWEc2s!5e0!3m2!1spl!2spl!4v1518015507287" width="500" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
         </div>
             <!--
             {# % if request.user.is_authenticated % #}
